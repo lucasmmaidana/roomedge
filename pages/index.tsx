@@ -3,9 +3,10 @@ import Head from "next/head";
 import Image from "next/image";
 import { getRooms } from "../cms";
 import styles from "../styles/Home.module.css";
+import { Room } from "../types/room";
 
 type Props = {
-  allRooms: Array<{ title: string }>;
+  allRooms: Array<Room>;
 };
 
 const Home: NextPage<Props> = ({ allRooms }) => {
