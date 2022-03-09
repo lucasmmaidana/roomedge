@@ -14,7 +14,7 @@ export async function getRooms() {
     fields.map(({ fields, sys }) => ({
       ...fields,
       id: sys.id,
-      image: fields.image.fields.file.url || "",
+      image: "https:" + fields.image.fields.file.url || "",
     })) || null
   );
 }

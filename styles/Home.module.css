@@ -40,7 +40,7 @@
 }
 
 .title {
-  margin: 0;
+  margin-bottom: 6rem;
   line-height: 1.15;
   font-size: 4rem;
 }
@@ -56,6 +56,13 @@
   white-space: pre;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 1.8rem;
+  column-gap: 2rem;
+}
+
 .code {
   background: #fafafa;
   border-radius: 5px;
@@ -63,14 +70,6 @@
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
 }
 
 .card {

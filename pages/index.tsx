@@ -19,42 +19,27 @@ const Home: NextPage<Props> = ({ allRooms }) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          {JSON.stringify(allRooms, null, 4)}
-        </p>
-
+        <h1 className={styles.title}>Roomedge</h1>
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          {allRooms.map((room) => (
+            <article key={room.id}>
+              <Image src={room.image} width="400" height="250" alt="" />
+              <h2>{room.title}</h2>
+              <p>{room.description}</p>
+              <dl>
+                <dt>Price</dt>
+                <dd>${room.price}</dd>
+              </dl>
+              <dl>
+                <dt>Guests</dt>
+                <dd>{room.guests}</dd>
+              </dl>
+              <dl>
+                <dt>Location</dt>
+                <dd>{room.location}</dd>
+              </dl>
+            </article>
+          ))}
         </div>
       </main>
 
