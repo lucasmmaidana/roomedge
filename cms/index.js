@@ -18,3 +18,30 @@ export async function getRooms() {
     })) || null
   );
 }
+
+export async function getRoomsID() {
+  const query = {
+    content_type: "room",
+    select: "sys.id",
+  };
+  const { items: fields } = await client.getEntries(query);
+  return (
+    fields.map(({ sys }) => ({
+      id: sys.id,
+    })) || null
+  );
+}
+
+export async function getRoomData(id) {
+  const query = {
+    content_type: "room",
+    "sys.id": id,
+  };
+  const { items: fields } = await client.getEntries(query);
+  const room = fields[0];
+  return {
+    ...room.fields,
+    id: room.sys.id,
+    image: "https:" + room.fields.image.fields.file.url || "",
+  };
+}
