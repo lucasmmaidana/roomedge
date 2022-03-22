@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { getRooms } from "../cms";
+import RoomCard from "../components/RoomCard";
 import styles from "../styles/Home.module.css";
 import { Room } from "../types/Room";
 
@@ -22,27 +22,7 @@ const Home: NextPage<Props> = ({ allRooms }) => {
         <h1 className={styles.title}>Roomedge</h1>
         <div className={styles.grid}>
           {allRooms.map((room) => (
-            <Link key={room.id} href={`room/${room.id}`}>
-              <a>
-                <article>
-                  <Image src={room.image} width="400" height="250" alt="" />
-                  <h2>{room.title}</h2>
-                  <p>{room.description}</p>
-                  <dl>
-                    <dt>Price</dt>
-                    <dd>${room.price}</dd>
-                  </dl>
-                  <dl>
-                    <dt>Guests</dt>
-                    <dd>{room.guests}</dd>
-                  </dl>
-                  <dl>
-                    <dt>Location</dt>
-                    <dd>{room.location}</dd>
-                  </dl>
-                </article>
-              </a>
-            </Link>
+            <RoomCard key={room.id} room={room} />
           ))}
         </div>
       </main>

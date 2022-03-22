@@ -1,0 +1,10 @@
+.dl {
+  display: flex;
+  margin-bottom: 0.1rem;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.dd {
+  font-weight: bold;
+}
