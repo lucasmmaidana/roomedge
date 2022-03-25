@@ -1,7 +1,8 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { getRooms } from "../cms";
+import Header from "../components/Header";
 import RoomCard from "../components/RoomCard";
 import styles from "../styles/Home.module.css";
 import { Room } from "../types/Room";
@@ -19,7 +20,7 @@ const Home: NextPage<Props> = ({ allRooms }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>Roomedge</h1>
+        <Header />
         <div className={styles.grid}>
           {allRooms.map((room) => (
             <RoomCard key={room.id} room={room} />
@@ -45,9 +46,9 @@ const Home: NextPage<Props> = ({ allRooms }) => {
 
 export default Home;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allRooms = (await getRooms()) ?? [];
   return {
     props: { allRooms },
   };
-}
+};
