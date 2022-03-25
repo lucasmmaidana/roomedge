@@ -1,4 +1,15 @@
+# Roomedge
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+Integration with headless CMS [Contenful](https://www.contentful.com/)
+
+Static generated site with dynamic routes
+
+Unit testing with Jest and React Testing Library
+
+<b>[Live demo](https://roomedge.vercel.app/)</b>
+
 
 ## Getting Started
 
