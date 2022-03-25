@@ -12,9 +12,9 @@ const RoomCard: FunctionComponent<Props> = ({ room }) => {
   return (
     <Link key={room.id} href={`room/${room.id}`}>
       <a>
-        <article>
+        <article className={styles.card}>
           <Image src={room.image} width="400" height="250" alt="" />
-          <h2>{room.title}</h2>
+          <h2 className={styles.title}>{room.title}</h2>
           <p>{room.description}</p>
           <dl className={styles.dl}>
             <dt>Price</dt>

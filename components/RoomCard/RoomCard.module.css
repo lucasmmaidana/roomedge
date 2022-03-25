@@ -7,4 +7,16 @@
 
 .dd {
   font-weight: bold;
+  text-align: end;
+}
+
+.title {
+  color: #1d182e;
+}
+
+.card:hover .title {
+  background: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
